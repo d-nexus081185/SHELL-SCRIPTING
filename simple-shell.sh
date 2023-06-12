@@ -1,19 +1,24 @@
 #!/usr/bin/bash
 echo "TO ACCESS YOUR DASHBOARD, ENTER USERNAME & DEFAULT PASSWORD"
 
+sleep 2
+
 echo "Enter Your Desired User Name"
 read -p "Enter Your Username: " user_name
 echo "Enter Default Password provided by the ADMIN"
 password_number=12345
 read -sp "Enter Your Default Password: " default_password
 echo
+
+sleep 3
+
 if [ "$default_password" -eq "$password_number" ]; then
 echo "Password match found. Please change your password."
 read -sp "Please Change Your Password: " new_password
 echo
-echo "Password Changed Successfully" 
+echo "Password Changed Successfully"
 else
-echo "Wrong Default Password Entered!"
-read -p "Enter Correct Default Password: " default_password1
-echo "ACCESS DENIED!! Contact the ADMIN for the Default Password!"
+echo "Wrong Default Password Entered"
+sleep 2
+echo "ACCESS DENIED!!! Contact the ADMIN!!!"
 fi
