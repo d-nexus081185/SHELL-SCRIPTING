@@ -14,9 +14,11 @@ We aim to use this to further deepen our knowledge base on the use of shell scri
 
 However, we also use this oppourtunity to seek input from other experienced software engineers or inexpereinced software engineers like me, so we can break and find a way to make it back to form part of out learning process.
 
-I can be reached on email;
+Hope this finds you well.
+
+
 emekaezeobi@outlook.com
-github.com/d-nexus081185 is my github profile
+
 
 
 
