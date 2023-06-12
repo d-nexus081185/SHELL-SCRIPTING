@@ -13,7 +13,9 @@ sleep 3
 
 if [ "$default_password" -eq "$password_number" ]; then
 echo "Password match found. Please change your password."
-read -sp "Please Change Your Password: " new_password
+read -sp "Please Enter New Password: " new_password
+echo
+read -sp "Please Confirm New Password: "
 echo
 echo "Password Changed Successfully"
 else
