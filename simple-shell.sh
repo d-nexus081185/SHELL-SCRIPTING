@@ -3,8 +3,7 @@ echo "TO ACCESS YOUR DASHBOARD, ENTER USERNAME & DEFAULT PASSWORD"
 
 sleep 2
 
-echo "Enter Your Desired User Name"
-read -p "Enter Your Username: " user_name
+read -p "Enter Your Desired Username: " user_name
 echo "Enter Default Password provided by the ADMIN"
 password_number=12345
 read -sp "Enter Your Default Password: " default_password
