@@ -24,8 +24,10 @@ age=$((current_year - birth_year))
 
 #Conditionals
 if [[ $birth_year -le $current_year ]]; then
-echo "$age years old"
+echo "$age years old!"
+echo
 else 
-echo "Are you an alien?"
+echo "Are you an alien?!"
+echo
 fi
 #End
