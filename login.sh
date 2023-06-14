@@ -3,7 +3,7 @@
 #Declaration of the default username and password
 default_username=admin
 default_password=12345
-
+set -n
 #User input section
 read -p "Username: " username
 read -sp "Password: " password
