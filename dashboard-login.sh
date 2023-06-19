@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 admin_username=admin
 admin_password=12345
