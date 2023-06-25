@@ -8,12 +8,13 @@ user_upgrade=UPGRADE
 
 #To get user input for the option available
 read -p "Do you want to perform system update or upgrade:  " user_input
+
 #Transform userinput return to uppercase
 uppercase="${user_input^^}"
 
-echo "System will $uppercase Shortly, Please Hold.
-"
+echo "System will $uppercase Shortly, Please Hold."
 sleep 4
+
 #Comparing the userinput with the global declared variable
 if [[ $uppercase == $user_upgrade ]];then
 	sleep 2
