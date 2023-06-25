@@ -29,7 +29,7 @@ else
     read -sp 'Password: ' usr_password2
     echo
     sleep 2
-    if [[ $usr_name2 == $admin_username && $usr_password2 == $admin_password ]]; then
+if [[ $usr_name2==$admin_username && $usr_password2==$admin_password ]];then
       echo "Default password matched. Please change your Username and Password"
       read -p 'Enter New Username: ' new_username
       echo "Welcome $new_username! Please change your Password"
@@ -38,9 +38,9 @@ else
       echo
       read -sp 'Confirm New Password: ' con_password
       echo
-      echo "$new_username, Username and Password have been successfully changed."
+echo "$new_username, Username and Password have been successfully changed."
       sleep 2
-      echo "Redirecting $new_username to the dashboard" 
+      echo "Redirecting $new_username to the dashboard"
     else
         echo "Access Denied! Contact the admin for support"
     fi

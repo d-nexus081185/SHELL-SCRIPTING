@@ -8,8 +8,8 @@ uppercase="${user_input^^}"
 echo "System will $uppercase Shortly.."
 sleep 3
 
-if [[ $uppercase == $user_upgrade ]]; then 
-	sleep 2 
+if [[ $uppercase == $user_upgrade ]];then
+	sleep 2
 	echo "Running System Upgrade"
 	sudo apt upgrade
 	echo "System Upgrade Completed Successfully"
