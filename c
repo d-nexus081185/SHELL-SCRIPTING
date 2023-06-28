@@ -14,18 +14,18 @@ uppercase="${quote_currency^^}"
 
 #Compare user input to base currency
 if [[ $uppercase == $base_naira ]]; then
-	base=745
 	echo "You are about to convert NGN to USD"
 	sleep 2
 	read -p 'Enter amount: ' naira
-	result=$((naira/base))
+	integer=$((naira))
+	result=$(($integer / 840))
 	echo "The exchange rate is: $result"
 else
 	echo "You are about to convert USD to NGN"
 	sleep 2
 	read -p 'Enter amount: ' dollar
-	result=$((dollar * 745))
-	echo "The exchange rate is: $result"
+	result=$((dollar * 840))
+	echo "The exchange rate is: ₦$result"
 fi
 
 #end
