@@ -37,21 +37,68 @@ echo
 
 while [[ $user_attempt -le 9 && $uppercase == $for_easy_mode ]]
 do
-	echo "YOU HAVE 9 ATTEMPTS REMAINING"
+	echo "YOU HAVE $for_easy_attempt ATTEMPTS REMAINING"
 	echo
 	read -p 'MAKE A GUESS: ' easy_guess
 	if [ $easy_guess -eq $secret_number ]; then
-		echo "CONGRATULATIONS $name_uppercase! YOU GUESSED THE RIGHT NUMBER"
+		echo "CONGRATULATIONS $name_upper! YOU GUESSED THE RIGHT NUMBER"
 		break
 	else
-		echo "YOUR GUESS WAS WRONG, TRY AGAIN: "
-		((for_easy_attempts--))
+		echo "YOUR GUESS IS WRONG, TRY AGAIN: "
+		((for_easy_attempt--))
 	fi
-	((count++))
+	((user_attempt++))
 done
+
 if [ $user_attempt -gt 9 ]; then
-	echo "YOU HAVE USED UP YOUR GUESSES, PRESS CTRL+Z AND ./number_game.sh TO RESTART THE GAME TO CONTINUE"
+	echo "YOU HAVE USED UP YOUR GUESSES, PRESS CTRL+Z AND ./NUMBER_GAME.SH TO RESTART THE GAME"
 fi
+
+while [[ $user_attempt -le 5 && $uppercase == $for_hard_mode ]]
+do
+	echo "YOU HAVE $for_hard_attempt ATTEMPTS REMAINING"
+	echo
+	read -p 'MAKE A GUESS: ' hard_guess
+	if [ $hard_guess -eq $sceret_number ]; then
+		echo "CONGRATULATIONS $name_upper! YOU GUESSED THE RIGHT NUMBER"
+		break
+	else
+		echo "YOUR GUESS IS WRONG, TRY AGAIN: "
+		((for_hard_attempt--))
+	fi
+	((user_attempt++))
+done
+
+if [ $user_attempt -gt 5 ]; then
+	echo "YOU HAVE USED UP YOUR GUESSES, PRESS CTRL+Z AND ./NUMBER_GAME.SH TO RESTART THE GAME"
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		
