@@ -1,74 +1,71 @@
 #!/bin/bash
 
-number_of_counter=1
+#Variable declaration
+counter=1
 
-#The Secret Number
-secret_number=63
+for_easy_mode=EASY
+for_hard_mode=HARD
+
+for_easy_attempt=9
+for_hard_attempt=5
+
+secret_number=10
+
 
 #Start
-echo "Welcome to the number guessing game!"
-sleep 2
-echo "In this game, you will choose a number between 1 and 100"
-sleep 2
-#Difficulty mode
-valid_easy=EASY
-valid_hard=HARD
+echo "THIS IS A GUESSING GAME; USER IS TO GUESS A NUMBER BETWEEN 1 to 10."
+sleep 3
+echo
 
-#Remaining attempts in each mode
-remaining_mode_easy=10
-remaining_mode_hard=5
+#Recieve user input (on type of game mode)
+read -sp 'CHOOSE USER MODE (EASY/HARD) "TYPE AND PRESS ENTER" : ' user_input
+echo
+read -sp 'ENTER NAME: ' name
+echo
+echo
 
-read -p 'First, Choose a difficulty Level (Easy/Hard): ' user_input
-
-#Transform user input to uppercase
+#Text transform user input to uppercase
 uppercase="${user_input^^}"
+name_upper="${name^^}"
 
-echo "User difficulty level is set to: $uppercase!"
-sleep 2
-echo "lets begin!"
-sleep 2
-while [[ $number_of_counter -le 10 && $uppercase == $valid_easy ]]
-do
-	echo "You have $remaining_mode_easy guess attempts"
-	read -p 'Guess a number: ' easy_guess
-	if [ $easy_guess -eq $secret_number ]; then
-		echo "Congratulations! you guessed the correct number"
+#User mode confirmation message
+echo "USER MODE SELECTED: $uppercase"
+echo "WELCOME $name_upper, LET'S BEGIN!"
+echo
+
+while [[ $counter -le 9 && $uppercase == $for_easy_mode ]]; do
+	echo "YOU HAVE $for_easy_attempt ATTEMPTS REMAINING"
+	echo
+	read -p 'MAKE A GUESS: ' user_guess
+	if [ $user_guess -eq $secret_number ];then
+		echo "CONGRATULATIONS $name_upper! YOU GUESSED THE RIGHT NUMBER"
 		break
 	else
-		echo "Incorrect guess, Try again: "
-		((remaining_mode_easy--))
+		echo "YOUR GUESS IS WRONG, TRY AGAIN: "
+		((for_easy_attempt--))
 	fi
-	((number_of_counter++))
-	
+
+	((counter++))
 done
-if [ $number_of_counter -gt 10 ];then
-	echo "You have run out of number of guesses in easy mode"
+
+if [ $counter -gt 10 ];then
+	echo "YOU HAVE USED UP YOUR GUESSES"
 fi
-while [[ $number_of_counter -le 5 && $uppercase == $valid_hard ]]
-do
-	echo "You have $remaining_mode_hard guess attempts"
-	read -p 'Guess a number: ' hard_guess
-	if [ $hard_guess -eq $secret_number ]; then
-		echo "Congratulations! you guessed the correct number"
+
+while [[ $counter -le 5 && $uppercase == $for_hard_mode ]]; do
+	echo "YOU HAVE $for_hard_attempt ATTEMPTS REMAINING"
+	echo
+	read -p 'MAKE A GUESS: ' user_hard_guess
+	if [ $user_hard_guess -eq $secret_number ];then
+		echo "CONGRATULATIONS $name_upper! YOU GUESSED THE RIGHT NUMBER"
 		break
 	else
-		echo "Incorrect guess, Try again: "
-		((remaining_mode_hard--))
+		echo "YOUR GUESS IS WRONG, TRY AGAIN: "
+		((for_hard_attempt--))
 	fi
-	((number_of_counter++))
+	((counter++))
 done
 
-if [ $number_of_counter -gt 5 ]; then
-	echo "You have run out of number of guesses in hard mode"
+if [ $counter -gt 6 ];then
+	echo "YOU HAVE USED UP YOUR GUESSES"
 fi
-
-
-
-
-
-
-
-
-
-
-
