@@ -19,12 +19,12 @@ sleep 4
 if [[ $uppercase == $user_upgrade ]];then
 	sleep 2
 	echo "Running System Upgrade"
-	sudo apt upgrade -y
+	echo "<USERPASSWORD>" | sudo apt upgrade -y
 	echo "System Upgrade Completed Successfully"
 else
 	sleep 2
 	echo "Running System Update"
-	sudo apt update
+	echo "USERPASSWORD"| sudo apt update
 	echo "System Update Completed Successfully"
 fi
 #End
