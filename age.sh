@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Declarations
-current_year=2023
+current_year=2024
 echo "-----------------------"
 echo "ZOBI AGE PREDICTOR APP"
 echo "-----------------------"
